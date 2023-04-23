@@ -1,5 +1,8 @@
 package addition
 
-func Addition[T int | float64](a, b T) T {
+type Addition struct {
+}
+
+func (Addition) Add(a, b int) int {
 	return a + b
 }

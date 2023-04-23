@@ -1,5 +1,8 @@
 package divide
 
-func Divide[T int | float64](a, b T) T {
+type Divider struct {
+}
+
+func (Divider) Divide(a, b int) int {
 	return a / b
 }

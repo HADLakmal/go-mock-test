@@ -1,14 +1,18 @@
 package gomocktest
 
 import (
-	"go-mock-test/addition"
-	"go-mock-test/divide"
+	domian "go-mock-test/domain"
 )
 
-func Avarage[T int | float64](avg T, value ...T) T {
-	var sum T
+type Mathematics struct {
+	Addition domian.Additional
+	Divide   domian.Divide
+}
+
+func (m Mathematics) Avarage(avg int, value ...int) int {
+	var sum int
 	for _, t := range value {
-		sum = addition.Addition(sum, t)
+		sum = m.Addition.Add(sum, t)
 	}
-	return divide.Divide(sum, avg)
+	return m.Divide.Divide(sum, avg)
 }
